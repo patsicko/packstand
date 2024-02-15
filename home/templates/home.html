@@ -1,18 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        Hello from django <br>
+{% extends "master.html" %}
 
-        <h2 class="shadow">Here is the django prj</h2>
+{% block title %} Home {% endblock %}
 
+
+{% block content %} 
+
+<div>
+    <ul class="flex justify-center items-center gap-8 shadow">
+        <li> <a href="">Home</a></li>
+        <li> <a href="about/">About</a></li>
+    </ul>
+</div>
+
+<div>
+    <!-- Main Content -->
+<div class="container mx-auto mt-8">
+    <h1 class="text-4xl font-bold text-center text-gray-900 mb-4">Welcome to My Website</h1>
+    <p class="text-lg text-center text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper velit eget libero gravida, vel luctus ipsum aliquet.</p>
+    <div class="flex justify-center mt-8">
+        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Learn More</a>
     </div>
+</div>
 
-</body>
-</html>
+<!-- Footer -->
+<footer class="bg-gray-200 py-4 mt-8">
+    <div class="container mx-auto text-center">
+        <p class="text-gray-700">© 2024 My Website. All rights reserved.</p>
+    </div>
+</footer>
+</div>
+
+
+
+
+{% endblock %}
