@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+
+{% block title %} Blogs  {%  endblock %}
+
+{% block content %}
+
+<div>
+    {% for blog in blogs %}
+
+    <div>
+      Title:  {{blog.title}} <br>
+       Author: {{blog.author}} <br>
+      Date :  {{blog.date}} <br>
+      Contents:  {{blog.contents}}
+    </div>
+
+    {% endfor %}
+</div>
+
+
+{% endblock %}

@@ -3,13 +3,16 @@
 {% block title %} User details {% endblock%}
 
 {% block content %}
-<div class="flex items-center justify-center">
-    <div class="flex  gap-8 mt-8 shadow-md w-1/4 px-6">
-       <div class="underline">Profile</div>
+<div class="flex flex-col items-center justify-center ">
+    <div class="underline">Profile</div>
+    <div class="flex  gap-8 mt-8 shadow-md w-1/4 px-6 bg-gray-200">
        
-      <div class="flex flex-col justify-center items-center ">
+       
+      <div class="flex flex-col justify-center items-center w-full p-6">
        <div> {{user.lastName}} </div>
-       <div> {{user.email}}</div>
+       <div> Email: {{user.email}}</div>
+       <div>Contact: {{user.phone}}</div>
+       <div>Join Date: {{user.join_date}}</div>
       </div>
     </div>
  <a href="/home"></a>
