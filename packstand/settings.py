@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$qsut_1l90!k2!z5_781&z2cv(co5_-*w3+q=(*kakn7%qsuf$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','.onrender.com']
 
 
 # Application definition
@@ -88,14 +88,25 @@ WSGI_APPLICATION = 'packstand.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#      'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres.qdxppmvghjwwxvqtguah',
+#         'PASSWORD': 'musanze@gmail.com',
+#         'HOST': 'aws-0-eu-central-1.pooler.supabase.com',   
+#         'PORT': '5432',       
+#     }
+# }
+
 DATABASES = {
      'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres.qdxppmvghjwwxvqtguah',
-        'PASSWORD': 'musanze@gmail.com',
-        'HOST': 'aws-0-eu-central-1.pooler.supabase.com',   
-        'PORT': '5432',       
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'djangoproject',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '/opt/lampp/var/mysql/mysql.sock',   
+        'PORT': '3306',       
     }
 }
 
