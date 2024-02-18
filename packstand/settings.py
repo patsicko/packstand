@@ -88,27 +88,27 @@ WSGI_APPLICATION = 'packstand.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#      'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres.qdxppmvghjwwxvqtguah',
-#         'PASSWORD': 'musanze@gmail.com',
-#         'HOST': 'aws-0-eu-central-1.pooler.supabase.com',   
-#         'PORT': '5432',       
-#     }
-# }
-
 DATABASES = {
      'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangoproject',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '/opt/lampp/var/mysql/mysql.sock',   
-        'PORT': '3306',       
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres.qdxppmvghjwwxvqtguah',
+        'PASSWORD': 'musanze@gmail.com',
+        'HOST': 'aws-0-eu-central-1.pooler.supabase.com',   
+        'PORT': '5432',       
     }
 }
+
+# DATABASES = {
+#      'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'djangoproject',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': '/opt/lampp/var/mysql/mysql.sock',   
+#         'PORT': '3306',       
+#     }
+# }
 
 
 # Password validation
