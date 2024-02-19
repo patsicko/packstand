@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from . models import User,Blog
+
 
 # Create your views here.
 
@@ -37,3 +38,24 @@ def blogs(request):
     }
 
     return HttpResponse(template.render(context,request))
+
+
+def signup(request):
+    if request.method == 'POST':
+        firstName = request.POST['firstName']
+        lastName = request.POST['lastName']
+        phone = request.POST['phone']
+        email = request.POST['email']
+        password = request.POST['password']
+
+        user = User.objects.create(firstName=firstName,lastName=lastName,phone=phone,email=email,password=password)
+        print("created usr",user)
+
+        return redirect('/blogs')
+
+    return render(request, 'signup.html')    
+
+  
+
+
+

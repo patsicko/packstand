@@ -8,5 +8,6 @@ urlpatterns = [
     path('details/<int:id>',views.details, name='details'),
     path("blogs",views.blogs, name = "blogs"),
     path("__reload__/", include("django_browser_reload.urls")),
+    path('signup',views.signup, name="signup")
 
 ]
