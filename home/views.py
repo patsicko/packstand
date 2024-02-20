@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
+from django.contrib.auth.hashers import make_password,check_password
+from django.contrib.auth import authenticate, login
 from . models import User,Blog
 
 
@@ -48,14 +50,45 @@ def signup(request):
         email = request.POST['email']
         password = request.POST['password']
 
-        user = User.objects.create(firstName=firstName,lastName=lastName,phone=phone,email=email,password=password)
+        if User.objects.get(email=email).exists():
+            return render(request, 'signup.html', {'error': 'Email address already exists'})
+
+        hashed_password= make_password(password)
+
+        user = User.objects.create( 
+            firstName=firstName,
+            lastName=lastName,
+            phone=phone,
+            email=email,
+            password=hashed_password)
+        
         print("created usr",user)
 
-        return redirect('/blogs')
+        return redirect('/login')
 
     return render(request, 'signup.html')    
 
-  
+
+def login(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+        
+        try:
+            user= User.objects.get(email=email)
+        except User.DoesNotExist:
+            user = None
+
+        if user is not None:
+
+            if check_password(password,user.password):
+                print("loged user",user)
+                return redirect('about')
+
+            else: return render(request,'404.html')
+            
+        
+    return render(request,'login.html')
 
 
 
